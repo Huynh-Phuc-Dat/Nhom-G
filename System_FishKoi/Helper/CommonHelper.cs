@@ -150,7 +150,7 @@ namespace System_FishKoi.Helper
         public static bool IsValidEmail(string email)
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            return regex.IsMatch(email);
+            // tra ve email
         }
     }
 }
