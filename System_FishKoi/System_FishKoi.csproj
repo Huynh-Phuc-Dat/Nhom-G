@@ -247,8 +247,6 @@
     <Content Include="Areas\Lake\Scripts\LakeController.js" />
     <Content Include="Areas\Client_User\Scripts\Client_UserController.js" />
     <Content Include="Areas\Product\Scripts\ProductController.js" />
-    <Content Include="Areas\Product\Scripts\Product_InsertController.js" />
-    <Content Include="Areas\Product\Scripts\Product_UpdateController.js" />
     <Content Include="Areas\SystemUser\Scripts\SystemUserController.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -301,8 +299,6 @@
     <Content Include="Areas\Lake\Views\Lake_Setting\Lake_Setting_Update.cshtml" />
     <Content Include="Areas\Product\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Product\Views\Product\Product.cshtml" />
-    <Content Include="Areas\Product\Views\Product\Product_Insert.cshtml" />
-    <Content Include="Areas\Product\Views\Product\Product_Update.cshtml" />
     <Content Include="Areas\Product\Views\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

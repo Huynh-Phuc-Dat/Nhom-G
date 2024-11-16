@@ -92,7 +92,7 @@
                 		<a ng-click="showModal(${json})" href="javascript:;" class="menu-link px-3">Xem</a>
                 	</div>
                 	<div class="menu-item px-3">
-                		<a  ng-click="delete(${row.ProductID},$event)" class="menu-link px-3">Xóa</a>
+                		<a ng-show="${$scope.info.IsAdmin}"  ng-click="delete(${row.ProductID},$event)" class="menu-link px-3">Xóa</a>
                 	</div>
                 </div>`
 
@@ -212,6 +212,26 @@
             toastr.error('Lỗi tạo dữ liệu cá Koi');
         }
     })
+
+    const getSystem_User = $async(async () => {
+        try {
+            const response = await $http.get("/Home/GetSystem_User").then(success => success.data);
+            if (response.Status === MESSAGE_STATUS.success) {
+                $scope.info = response.Data;
+            } else {
+                toastr.warning(response.Message)
+            }
+        } catch (e) {
+            console.log(e);
+            toastr.error('Lỗi lấy dữ liệu thông tin đăng nhập');
+        }
+    })
+
+    const initData = async () => {
+        await getSystem_User();
+        $scope.search();
+    }
+    initData();
 
     $scope.search();
 }
