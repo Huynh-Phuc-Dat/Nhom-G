@@ -9,7 +9,6 @@ using System_FishKoi.Domain.BUS.Product;
 
 namespace System_FishKoi.Areas.Product
 {
-    [AuthorizeByRole]
     public class ProductController : BaseController
     {
         private string ATTACH_DIRECTORY = "Upload/Product";
