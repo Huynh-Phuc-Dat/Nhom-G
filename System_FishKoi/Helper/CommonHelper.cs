@@ -151,6 +151,7 @@ namespace System_FishKoi.Helper
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             // tra ve email
+            return regex.IsMatch(email);
         }
     }
 }
