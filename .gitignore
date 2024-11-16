@@ -1,0 +1,11 @@
+# Ignore Visual Studio and build-related files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build output directories
+bin/
+obj/
+Upload/

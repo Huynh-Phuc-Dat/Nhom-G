@@ -1,0 +1,75 @@
+﻿<script src="/Areas/FishKoi/Scripts/FishKoiController.js?v=@System_FishKoi.Helper.CommonHelper.GetNewVerson()"></script>
+<script src="/Directive/ng-enter.js"></script>
+<script src="/Directive/select2.js"></script>
+<script>
+    addController("FishKoiController", FishKoiController);
+    addDirective("ngEnter", ngEnter);
+    addDirective("select2", select2);
+</script>
+
+<div id="kt_app_content_container" class="app-container container-xxl" ng-controller="FishKoiController">
+    <div class="card">
+        <div class="card-header border-0 pt-6">
+            <div class="card-title">
+                <div class="d-flex align-items-center position-relative my-1">
+                    <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
+                    <input type="text" ng-model="filter.keySearch" ng-enter="search()" class="form-control form-control-solid  ps-12" placeholder="Từ khoá">
+                </div>
+
+                <div class="d-flex align-items-center position-relative ms-5">
+                    <select class="form-control form-control-solid w-250px" select2 ng-model="filter.fishKoiGender" ng-change="search()">
+                        <option value="-1">Giới tính</option>
+                        <option value="1">Đực</option>
+                        <option value="2">Mái</option>
+                    </select>
+                </div>
+
+                @*<div class="d-flex align-items-center position-relative ms-5">
+                        <select class="form-control form-control-solid w-250px" select2 ng-model="filter.status" ng-change="search()">
+                            <option value="-1">Tình trạng</option>
+                            <option value="0">Đang hoạt động</option>
+                            <option value="1">Đã xoá</option>
+                        </select>
+                    </div>*@
+            </div>
+            <div class="card-toolbar">
+                <div class="d-flex justify-content-end">
+                    @*<button type="button" href="javascript:;" class="btn btn-light-primary me-3">
+                            <i class="ki-outline ki-exit-up fs-2"></i> Export
+                        </button>*@
+                    <a ng-click="getPage_FishKoi_Insert()" href="javascript:;" class="btn btn-primary">
+                        <i class="ki-outline ki-plus fs-2"></i>  Tạo cá Koi
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body pt-0">
+            <div class="dt-container dt-bootstrap5 dt-empty-footer">
+                <div id="table-responsive">
+                    <table class="table align-middle  table-row-dashed fs-6 gy-5 " id="kt_fishkoi_table">
+                        <thead>
+                            <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                <th>Tên cá Koi</th>
+                                <th>Giới tính</th>
+                                <th>Tuổi</th>
+                                <th>Cân nặng</th>
+                                <th>Vóc dáng</th>
+                                <th>Nguồn gốc</th>
+                                <th>Giá tiền</th>
+                                <th>Tình trạng</th>
+                                <th class="text-end min-w-70px">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,77 @@
+﻿<script src="/Scripts/SideBar.js"></script>
+
+<script>
+    addController("SideBar", SideBar);
+</script>
+
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid" ng-controller="SideBar">
+    <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px">
+        <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold px-1" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+
+            <div class="menu-item">
+                <a class="menu-link" href="/">
+                    <span class="menu-icon">
+                        <i class="ki-outline ki-element-11 fs-2"></i>
+                    </span>
+                    <span class="menu-title">Dashboard</span>
+
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a class="menu-link" href="/danh-sach-ca-koi">
+                    <span class="menu-icon">
+                        <i class="fa-solid fa-fish fs-2"></i>
+                    </span>
+                    <span class="menu-title">Danh sách cá Koi</span>
+
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a class="menu-link" href="/danh-sach-ho-ca">
+                    <span class="menu-icon">
+                        <i class="ki-outline ki-bank fs-2"></i>
+                    </span>
+                    <span class="menu-title">Danh sách hồ cá</span>
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a class="menu-link" href="/thong-so-nuoc">
+                    <span class="menu-icon">
+
+                        <i class="ki-outline ki-rocket fs-2"></i>
+                    </span>
+                    <span class="menu-title">Thông số nước</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link" href="/nhan-vien-he-thong" ng-show="globalCurrentUser.IsAdmin">
+                    <span class="menu-icon">
+                        <i class="ki-outline ki-user fs-2"></i>
+                    </span>
+                    <span class="menu-title">Nhân viên hệ thống</span>
+                </a>
+            </div>
+
+            <div class="menu-item" ng-show="globalCurrentUser.IsAdmin">
+                <a class="menu-link" href="/thanh-vien-dang-ky">
+                    <span class="menu-icon">
+                        <i class="ki-outline ki-user-tick fs-2"></i>
+                    </span>
+                    <span class="menu-title">Thành viên đăng ký</span>
+                </a>
+            </div>
+
+            <div class="menu-item" ng-show="globalCurrentUser.IsAdmin">
+                <a class="menu-link" href="/danh-sach-san-pham">
+                    <span class="menu-icon">
+                        <i class="ki-outline ki-basket fs-2"></i>
+                    </span>
+                    <span class="menu-title">Sản phẩm</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
