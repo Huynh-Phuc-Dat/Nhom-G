@@ -36,7 +36,7 @@ namespace System_FishKoi.Helper
                 return package.Workbook;
             }
         }
-
+        // //return Environment.GetEnvironmentVariable("PPL_Warehouse_Development") == "Development" ? true : false;
         public static byte[] ExportFile(DataTable dtData, string title)
         {
             //excel
@@ -118,7 +118,7 @@ namespace System_FishKoi.Helper
             }
             return excelPackage.GetAsByteArray();
         }
-
+        // //return Environment.GetEnvironmentVariable("PPL_Warehouse_Development") == "Development" ? true : false;
         public static byte[] GenFileImport_V1(DataTable dtData)
         {
             //excel
