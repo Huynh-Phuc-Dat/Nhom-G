@@ -154,7 +154,6 @@
     <Compile Include="Areas\Directive\Controllers\DirectiveController.cs" />
     <Compile Include="Areas\FishKoi\FishKoiAreaRegistration.cs" />
     <Compile Include="Areas\FishKoi\Controllers\FishKoiController.cs" />
-    <Compile Include="Areas\Lake\Controllers\Lake_SettingController.cs" />
     <Compile Include="Areas\Lake\Controllers\LakeController.cs" />
     <Compile Include="Areas\Lake\LakeAreaRegistration.cs" />
     <Compile Include="Areas\Client_User\Controllers\Client_UserController.cs" />

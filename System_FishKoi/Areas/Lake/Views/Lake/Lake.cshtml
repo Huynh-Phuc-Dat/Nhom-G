@@ -1,0 +1,54 @@
+﻿<script src="/Areas/Lake/Scripts/LakeController.js?v=@System_FishKoi.Helper.CommonHelper.GetNewVerson()"></script>
+<script src="/Directive/ng-enter.js"></script>
+<script src="/Directive/select2.js"></script>
+<script>
+    addController("LakeController", LakeController);
+    addDirective("ngEnter", ngEnter);
+    addDirective("select2", select2);
+</script>
+<div id="kt_app_content_container" class="app-container container-xxl" ng-controller="LakeController">
+    <div class="card">
+        <div class="card-header border-0 pt-6">
+            <div class="card-title">
+                <div class="d-flex align-items-center position-relative my-1">
+                    <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
+                    <input type="text" ng-model="filter.keySearch" ng-enter="search()" class="form-control form-control-solid  ps-12" placeholder="Từ khoá">
+                </div>
+            </div>
+            <div class="card-toolbar">
+                <div class="d-flex justify-content-end">
+                    @*<button type="button" href="javascript:;" class="btn btn-light-primary me-3">
+                            <i class="ki-outline ki-exit-up fs-2"></i> Export
+                        </button>*@
+                    <a ng-click="getPage_Lake_Insert()" href="javascript:;" class="btn btn-primary">
+                        <i class="ki-outline ki-plus fs-2"></i>  Tạo hồ cá 
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body pt-0">
+            <div class="dt-container dt-bootstrap5 dt-empty-footer">
+                <div id="table-responsive">
+                    <table class="table align-middle  table-row-dashed fs-6 gy-5 " id="kt_lake_table">
+                        <thead>
+                            <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
+                                <th>Tên hồ cá</th>
+                                <th>Kích thước</th>
+                                <th>Độ sâu</th>
+                                <th>Thể tích</th>
+                                <th>Số lượng cống thoát</th>
+                                <th>Công suất máy bơm</th>
+                                <th class="text-end min-w-70px">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
