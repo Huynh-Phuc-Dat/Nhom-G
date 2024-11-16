@@ -1,0 +1,273 @@
+﻿<script src="/Areas/Lake/Scripts/Lake_Setting_UpdateController.js?v=@System_FishKoi.Helper.CommonHelper.GetNewVerson()"></script>
+<script src="/Directive/select2.js"></script>
+<script src="/Directive/Tooltip.js"></script>
+<script src="/Directive/datepicker.js"></script>
+<script>
+    addController("Lake_Setting_UpdateController", Lake_Setting_UpdateController);
+    addDirective("select2", select2);
+    addDirective("tooltip", Tooltip);
+    addDirective("datepicker", datepicker);
+</script>
+
+<div class="app-container container-xxl" id="kt_app_content_container" ng-controller="Lake_Setting_UpdateController">
+    <input class="d-none" value="@ViewContext.RouteData.Values["id"]" id="settingID" />
+    <div class="card">
+        <div class="card-header border-0 pt-6">
+            <div class="card-title">
+                <i class="ki-outline ki-rocket fs-1 me-2"></i>
+                <h2>Thiết lập thông số nước</h2>
+            </div>
+        </div>
+
+        <div class="card-body pt-5">
+            <form class="form fv-plugins-bootstrap5 fv-plugins-framework" id="kt_ecommerce_settings_general_form">
+
+                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span class="required">Chọn hồ cá</span>
+                                <span class="ms-1" tooltip title="Chọn hồ cá">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <select class="form-control form-control-solid" ng-model="filter.LakeID" select2>
+                                <option value="-1">--Chọn hồ cá--</option>
+                                <option ng-repeat="item in list_Lake" value="{{item.LakeID}}">{{item.LakeName}}</option>
+                            </select>
+
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+
+                    </div>
+                    <!--end::Col-->
+                    <!--begin::Col-->
+
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span class="required">Ngày thiết lập thông số</span>
+                                <span class="ms-1" tooltip title="Chọn ngày thiết lập thông số">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <datepicker id="settingDate" model="filter.SettingDate"></datepicker>
+
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+
+
+                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nhiệt độ</span>
+                                <span class="ms-1" tooltip title="Nhập nhiệt độ">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="number" class="form-control form-control-solid" ng-model="filter.Temperature">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+
+                    </div>
+                    <!--end::Col-->
+                    <!--begin::Col-->
+
+
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ muối</span>
+                                <span class="ms-1" tooltip title="Nhập nồng độ muối">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="number" class="form-control form-control-solid" ng-model="filter.Salt">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ PH</span>
+                                <span class="ms-1" tooltip title="Nhập nồng độ PH">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="number" class="form-control form-control-solid" ng-model="filter.PH">
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Col-->
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ O2</span>
+
+                                <span class="ms-1" tooltip title="Nhập nồng độ O2">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" class="form-control form-control-solid" ng-model="filter.O2">
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--end::Col-->
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ NO2</span>
+                                <span class="ms-1" tooltip title="Nhập nồng độ NO2">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-solid" ng-model="filter.NO2">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+
+                    </div>
+
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ NO3</span>
+                                <span class="ms-1" tooltip title="Nhập nồng độ NO3">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input  class="form-control form-control-solid" ng-model="filter.NO3">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                    <!--begin::Col-->
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Nồng độ PO4</span>
+                                <span class="ms-1" tooltip title="Nhập nồng độ NO4">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="number" class="form-control form-control-solid" ng-model="filter.PO4">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+
+                    <div class="col">
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold form-label mt-3">
+                                <span>Các thông tin khác</span>
+                                <span class="ms-1" tooltip title="Nhập các thông tin khác">
+                                    <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input class="form-control form-control-solid" ng-model="filter.Note">
+                            <!--end::Input-->
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+
+                <div class="separator mb-6"></div>
+
+                <div class="d-flex justify-content-end">
+                    <!--begin::Button-->
+                    <button type="reset" data-kt-contacts-type="cancel" class="btn btn-light me-3" ng-click="backHome()">
+                        Trở về
+                    </button>
+                    <!--end::Button-->
+                    <!--begin::Button-->
+                    <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary" ng-show="globalCurrentUser.IsAdmin || globalCurrentUser.Username==filter.CreatedUser" ng-click="update($event)" id="btn-submit-lake-setting">
+                        <span class="indicator-label">
+                            Cập nhật
+                        </span>
+                        <span class="indicator-progress">
+                            Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                        </span>
+                    </button>
+                    <!--end::Button-->
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
