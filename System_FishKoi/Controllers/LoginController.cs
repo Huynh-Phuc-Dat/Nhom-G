@@ -32,7 +32,12 @@ namespace System_FishKoi.Controllers
             return View();
         }
 
-        public JsonResult SignIn(SignInSystemUser_Input bo)
+        /// <summary>
+        /// ham dang nhap
+        /// </summary>
+        /// <param name="bo"></param>
+        /// <returns></returns>
+        public JsonResult SignIn(SignInSystemUser_Input bo) 
         {
             GetSystemUser_Output result = null;
             result = _systemUserBUS.SignIn(bo);
@@ -66,9 +71,14 @@ namespace System_FishKoi.Controllers
             _responseMessage.Data = result;
             return Json(_responseMessage, JsonRequestBehavior.AllowGet);
         }
+        /// <summary>
+        /// ham dang kí thành viên
+        /// </summary>
+        /// <param name="bo"></param>
+        /// <returns></returns>
 
         [HttpPost]
-        public JsonResult Register(RegisterClient_User_Input bo)
+        public JsonResult Register(RegisterClient_User_Input bo) 
         {
             var result = _client_UserBUS.Register(bo);
             _responseMessage = _client_UserBUS.GetReponseMessage();
