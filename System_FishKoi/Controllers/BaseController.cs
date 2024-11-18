@@ -32,6 +32,7 @@ namespace System_FishKoi.Controllers
             }
             else
             {
+                //đăng nhập 
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Login", area = "" }));
             }
         }
