@@ -14,6 +14,7 @@ namespace System_FishKoi.Controllers
 
         public BaseController()
         {
+
             //hatfawftfwfdhg
             _reponseMessage.Status = MessageStatus.Success;
             _reponseMessage.Message = string.Empty;
