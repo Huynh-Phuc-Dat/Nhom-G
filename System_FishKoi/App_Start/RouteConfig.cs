@@ -9,6 +9,7 @@ namespace System_FishKoi
 {
     public class RouteConfig
     {
+
         public static void RegisterRoutes(RouteCollection routes)
         {
 
