@@ -8,7 +8,6 @@ using System_FishKoi.Domain.BUS.SystemUser;
 
 namespace System_FishKoi.Controllers
 {
-
     // controller dang nhap
     /// <summary>
     /// trang dang nhap
