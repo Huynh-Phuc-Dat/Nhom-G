@@ -25,6 +25,7 @@ namespace System_FishKoi.Controllers
             get { return (GetSystemUser_Output)Session["access_token"]; }
         }
 
+
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             if (filterContext.HttpContext.Session != null && filterContext.HttpContext.Session["access_token"] != null)
