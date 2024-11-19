@@ -37,6 +37,7 @@ namespace System_FishKoi.Controllers
             return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
         }
 
+
         public JsonResult GetData_Total_System_FishKoi()
         {
             var result = _homeBUS.GetData_Total_System_FishKoi();
