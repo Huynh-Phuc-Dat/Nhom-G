@@ -21,6 +21,7 @@ namespace System_FishKoi.Controllers
 
         public LoginController()
         {
+
             _responseMessage.Status = MessageStatus.Success;
             _responseMessage.Message = string.Empty;
             _systemUserBUS = new SystemUserBUS();

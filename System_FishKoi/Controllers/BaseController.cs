@@ -14,6 +14,7 @@ namespace System_FishKoi.Controllers
 
         public BaseController()
         {
+
             //hatfawftfwfdhg
             _reponseMessage.Status = MessageStatus.Success;
             _reponseMessage.Message = string.Empty;
@@ -23,6 +24,7 @@ namespace System_FishKoi.Controllers
         {
             get { return (GetSystemUser_Output)Session["access_token"]; }
         }
+
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
