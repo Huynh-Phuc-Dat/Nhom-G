@@ -145,29 +145,6 @@ namespace System_FishKoi.Domain.DAO.FishKoi
             return returnVal;
         }
 
-        public int Delete(DeleteFishKoi_Input bo)
-        {
-            int returnVal = -1;
-            objData = Data.CreateData();
-            try
-            {
-                objData.Connect();
-                objData.CreateNewStoredProcedure("FishKoi_Delete");
-                objData.AddParameter("@FishKoiID", bo.FishKoiID);
-                objData.AddParameter("@UserLogin", _userLogin);
-
-                objData.ExecNonQuery();
-                returnVal = 1;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                objData.Disconnect();
-            }
-            return returnVal;
-        }
+       
     }
 }
