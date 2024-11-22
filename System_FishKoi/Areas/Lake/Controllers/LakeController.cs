@@ -91,41 +91,7 @@ namespace System_FishKoi.Areas.Lake
         }
 
         [HttpGet]
-        public JsonResult GetAll()
-        {
-            var result = _lakeBUS.GetAll();
-            _reponseMessage = _lakeBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-            return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult Insert(InsertLake_Input bo)
-        {
-            int result = _lakeBUS.Insert(bo);
-            _reponseMessage = _lakeBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-
-            return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult Update(UpdateLake_Input bo)
-        {
-            int result = _lakeBUS.Update(bo);
-            _reponseMessage = _lakeBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-
-            return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult Delete(DeleteLake_Input bo)
-        {
-            int result = _lakeBUS.Delete(bo);
-            _reponseMessage = _lakeBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-
+        
             return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
         }
     }
