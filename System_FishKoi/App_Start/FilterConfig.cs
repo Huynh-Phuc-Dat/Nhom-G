@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
+
 namespace System_FishKoi
 {
     public class FilterConfig
@@ -11,4 +12,5 @@ namespace System_FishKoi
             filters.Add(new HandleErrorAttribute());
         }
     }
+    
 }
