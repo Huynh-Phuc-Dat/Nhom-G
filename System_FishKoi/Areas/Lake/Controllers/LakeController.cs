@@ -12,21 +12,7 @@ namespace System_FishKoi.Areas.Lake
 {
     public class LakeController : BaseController
     {
-        private readonly LakeBUS _lakeBUS = null;
-        public LakeController()
-        {
-            _lakeBUS = new LakeBUS();
-        }
-
-        public ActionResult Lake()
-        {
-            return View();
-        }
-
-        public ActionResult Lake_Insert()
-        {
-            return View();
-        }
+        
 
         public ActionResult Lake_Update()
         {
