@@ -43,24 +43,6 @@ namespace System_FishKoi.Areas.Client_User
             return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public JsonResult UpdateStatus(UpdateStatusClient_User_Input bo)
-        {
-            int result = _client_UserBUS.UpdateStatus(bo);
-            _reponseMessage = _client_UserBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-
-            return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult Delete(DeleteClient_User_Input bo)
-        {
-            int result = _client_UserBUS.Delete(bo);
-            _reponseMessage = _client_UserBUS.GetReponseMessage();
-            _reponseMessage.Data = result;
-
-            return Json(_reponseMessage, JsonRequestBehavior.AllowGet);
-        }
+        
     }
 }
